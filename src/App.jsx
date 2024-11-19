@@ -1,7 +1,8 @@
-
+import React from 'react';
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
-
-import './App.css'
+import Navbar from './components/Navbar';
+import { Home, Mixes, Contact } from './pages';
+import './index.css'
 
 
 function App() {
@@ -9,7 +10,17 @@ function App() {
 
   return (
     <main className="bg-slate-300/20 h-full">
-        CHROMASCAPES
+    <Router>
+     <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+       
+        <Route  path="/mixes" element={<Mixes/>}/>
+        <Route  path="/contact" element={<Contact/>}/> 
+
+  </Routes>
+  </Router>
   </main>
   
       
